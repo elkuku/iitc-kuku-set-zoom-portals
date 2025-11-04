@@ -1,21 +1,28 @@
-import * as Plugin from "iitcpluginkit";
+import * as Plugin from 'iitcpluginkit'
+import icon from './icon.svg'
 
-
-class IitcKukuSetZoomPortals implements Plugin.Class {
+class KukuSetZoomPortals implements Plugin.Class {
 
     init() {
-        console.log("IitcKukuSetZoomPortals " + VERSION);
+        console.log(`KukuSetZoomPortals ${VERSION}`)
 
-        
+        const toolbarGroup = $('<div>', {class: 'leaflet-bar leaflet-control'})
+            .append(
+                $('<a>')
+                    .addClass('leaflet-bar-part')
+                    .css('background-image', `url("${icon}")`)
+                    .css('background-size', '24px')
+                    .on('click', () => window.map.setZoom(15))
+            )
 
-        // FILL ME
+        const parent = $('.leaflet-top.leaflet-left', window.map.getContainer())
+        parent.append(toolbarGroup)
     }
-
 }
 
 /**
  * use "main" to access you main class from everywhere
  * (same as window.plugin.IitcKukuSetZoomPortals)
  */
-export const main = new IitcKukuSetZoomPortals();
-Plugin.Register(main, "IitcKukuSetZoomPortals");
+export const main = new KukuSetZoomPortals()
+Plugin.Register(main, 'KukuSetZoomPortals')

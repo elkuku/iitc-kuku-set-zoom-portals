@@ -1,6 +1,6 @@
 {
-  "name": "IITC plugin: Iitc-Kuku-Set-Zoom-Portals",
-  "id": "iitc_plugin_IitcKukuSetZoomPortals",
+  "name": "IITC plugin: Kuku-Set-Zoom-Portals",
+  "id": "iitc_plugin_KukuSetZoomPortals",
   "category": "Controls",
   "description": "Set the zoom level to portals",
   "author": "elkuku",
