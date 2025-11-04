@@ -1,0 +1,10 @@
+{
+  "name": "IITC plugin: Iitc-Kuku-Set-Zoom-Portals",
+  "id": "iitc_plugin_IitcKukuSetZoomPortals",
+  "category": "Controls",
+  "description": "Set the zoom level to portals",
+  "author": "elkuku",
+  "entry": "src/Main.ts",
+  "minimize": false,
+  "changelog": ""
+}
