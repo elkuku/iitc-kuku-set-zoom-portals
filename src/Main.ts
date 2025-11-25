@@ -2,27 +2,25 @@ import * as Plugin from 'iitcpluginkit'
 import icon from './icon.svg'
 
 class KukuSetZoomPortals implements Plugin.Class {
-
     init() {
-        console.log(`KukuSetZoomPortals ${VERSION}`)
+        const toolbarGroup = document.createElement('div')
+        toolbarGroup.className = 'leaflet-bar leaflet-control'
 
-        const toolbarGroup = $('<div>', {class: 'leaflet-bar leaflet-control'})
-            .append(
-                $('<a>')
-                    .addClass('leaflet-bar-part')
-                    .css('background-image', `url("${icon}")`)
-                    .css('background-size', '24px')
-                    .on('click', () => window.map.setZoom(15))
-            )
+        const a = document.createElement('a')
+        a.classList.add('leaflet-bar-part')
+        a.style.backgroundImage = `url("${icon}")`
+        a.style.backgroundSize = '24px'
+        a.title = 'Set the zoom level to "portals"'
+        a.addEventListener(
+            'click', () =>
+                window.map.setZoom(15)
+        )
 
-        const parent = $('.leaflet-top.leaflet-left', window.map.getContainer())
-        parent.append(toolbarGroup)
+        toolbarGroup.appendChild(a)
+
+        window.map.getContainer().querySelector('.leaflet-top.leaflet-left')!
+            .appendChild(toolbarGroup)
     }
 }
 
-/**
- * use "main" to access you main class from everywhere
- * (same as window.plugin.IitcKukuSetZoomPortals)
- */
-export const main = new KukuSetZoomPortals()
-Plugin.Register(main, 'KukuSetZoomPortals')
+Plugin.Register(new KukuSetZoomPortals(), 'KukuSetZoomPortals')
