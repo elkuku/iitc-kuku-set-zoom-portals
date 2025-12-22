@@ -40,6 +40,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Copy index.html
+        run: cp .github/index.html dist/
+
       - name: Upload build artifact to pages
         uses: actions/upload-pages-artifact@v3
         with:
@@ -50,8 +53,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Copy index.html
-        run: cp .github/index.html dist/
-
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
