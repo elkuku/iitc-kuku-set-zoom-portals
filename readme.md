@@ -6,7 +6,7 @@ It will add a button to zoom in or out to set the zoom level to "portals" (15).
 
 ## Installation
 
-Visit the [release page](https://github.com/elkuku/iitc-kuku-set-zoom-portals/releases/latest) and install the `user.js` file
+Visit the [release page](https://elkuku.github.io/iitc-kuku-set-zoom-portals/) and install the `user.js` file
 
 ----
 
